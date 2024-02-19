@@ -1,0 +1,18 @@
+.signup-form {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.signup-form::-webkit-scrollbar {
+  width: 12px;
+}
+
+.signup-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.signup-form::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}

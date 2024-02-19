@@ -1,0 +1,16 @@
+swagger: "2.0"
+info:
+  title: "Get Tender"
+  description: "Get tender details or list all tenders."
+  version: "1.0"
+paths:
+  /tender:
+    get:
+      tags:
+        - "tender"
+      summary: "Get tender details or list all tenders"
+      responses:
+        200:
+          description: "Successful operation"
+        404:
+          description: "Tender not found"

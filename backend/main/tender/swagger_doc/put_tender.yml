@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  title: "Update Tender"
+  description: "Update an existing tender."
+  version: "1.0"
+paths:
+  /tender/{tender_id}:
+    put:
+      tags:
+        - "tender"
+      summary: "Update an existing tender"
+      parameters:
+        - name: "tender_id"
+          in: "path"
+          description: "ID of the tender to be updated"
+          required: true
+          type: "integer"
+          format: "int64"
+        - name: "body"
+          in: "body"
+          description: "Updated tender details"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              forest_id:
+                type: "integer"
+                format: "int64"
+              tender_type:
+                type: "string"
+              description:
+                type: "string"
+              date_posted:
+                type: "string"
+                format: "date"
+      responses:
+        200:
+          description: "Tender updated successfully"
+        404:
+          description: "Tender not found"
+        403:
+          description: "Access forbidden. Forest Owner role required."

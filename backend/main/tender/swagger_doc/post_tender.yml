@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  title: "Create Tender"
+  description: "Create a new tender."
+  version: "1.0"
+paths:
+  /tender:
+    post:
+      tags:
+        - "tender"
+      summary: "Create a new tender"
+      parameters:
+        - name: "body"
+          in: "body"
+          description: "Tender details"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              forest_id:
+                type: "integer"
+                format: "int64"
+              tender_type:
+                type: "string"
+              description:
+                type: "string"
+              date_posted:
+                type: "string"
+                format: "date"
+      responses:
+        201:
+          description: "Tender created successfully"
+        403:
+          description: "Access forbidden. Forest Owner role required."

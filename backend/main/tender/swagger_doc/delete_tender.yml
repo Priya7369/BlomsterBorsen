@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+  title: "Delete Tender"
+  description: "Delete an existing tender."
+  version: "1.0"
+paths:
+  /tender/{tender_id}:
+    delete:
+      tags:
+        - "tender"
+      summary: "Delete an existing tender"
+      parameters:
+        - name: "tender_id"
+          in: "path"
+          description: "ID of the tender to be deleted"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        200:
+          description: "Tender deleted successfully"
+        404:
+          description: "Tender not found"
+        403:
+          description: "Access forbidden. Forest Owner role required."
